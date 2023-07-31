@@ -52,6 +52,7 @@ $('#main').on('touchstart mousedown', function(e){
   iX = evt.clientX - bb.left;
   iY = evt.clientY - bb.top;
   bDraw = true;
+  if(e.type.indexOf('touch') !== -1) e.preventDefault(); // 추가된 줄
 });
 
 $('#main').on('touchmove mousemove', function(e){
@@ -70,10 +71,12 @@ $('#main').on('touchmove mousemove', function(e){
     iX = iNewX;
     iY = iNewY;
   }
+  if(e.type.indexOf('touch') !== -1) e.preventDefault(); // 추가된 줄
 });
 
 $('#main').on('touchend mouseup', function(e){
   bDraw = false;
+  if(e.type.indexOf('touch') !== -1) e.preventDefault(); // 추가된 줄
 });
 
  </script>
