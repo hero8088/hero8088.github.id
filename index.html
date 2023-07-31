@@ -37,12 +37,12 @@ $(document).ready(function(){
   ctx.lineWidth =2;             //선 두께
 
   var img = document.getElementById("scream");
-  ctx.drawImage(img, 0, 0, window.innerWidth, window.innerHeight);
+  ctx.drawImage(img, 0, 0, window.innerWidth, window.innerHeight - 20);
 
 	$('#cls').on('click', function(){
     		// 컨텍스트 리셋
     		ctx.beginPath();
-		ctx.drawImage(img, 0, 0, window.innerWidth, window.innerHeight);
+		ctx.drawImage(img, 0, 0, window.innerWidth, window.innerHeight - 20);
 
 	});
 
@@ -52,7 +52,7 @@ $(document).ready(function(){
 
   function resizeCanvas() {
         canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight - 10;
+        canvas.height = window.innerHeight - 20;
     }
 
     window.addEventListener('resize', resizeCanvas, false);
