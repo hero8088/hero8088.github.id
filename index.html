@@ -5,7 +5,7 @@
  <meta charset="UTF-8">
 <style>
   body, html, #main {
-      height: 90%;
+      height: 98%;
       width: 100%;
       margin: 0;
       padding: 0;
@@ -37,12 +37,12 @@ $(document).ready(function(){
   ctx.lineWidth =2;             //선 두께
 
   var img = document.getElementById("scream");
-  ctx.drawImage(img, 0, 0, window.innerWidth, window.innerHeight - 100);
+  ctx.drawImage(img, 0, 0, window.innerWidth, window.innerHeight);
 
 	$('#cls').on('click', function(){
     		// 컨텍스트 리셋
     		ctx.beginPath();
-		ctx.drawImage(img, 0, 0, window.innerWidth, window.innerHeight - 100);
+		ctx.drawImage(img, 0, 0, window.innerWidth, window.innerHeight);
 
 	});
 
@@ -52,7 +52,7 @@ $(document).ready(function(){
 
   function resizeCanvas() {
         canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight - 100;
+        canvas.height = window.innerHeight;
     }
 
     window.addEventListener('resize', resizeCanvas, false);
