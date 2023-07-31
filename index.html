@@ -46,19 +46,18 @@ $(document).ready(function(){
 
 });
 
-
 $('#main').on('touchstart mousedown', function(e){
-  var evt = (e.type.indexOf('touch') !== -1 ? e.touches[0] : e);
+  var evt = (e.type.indexOf('touch') !== -1 ? e.originalEvent.touches[0] : e);
   iX = evt.clientX - bb.left;
   iY = evt.clientY - bb.top;
   bDraw = true;
-  if(e.type.indexOf('touch') !== -1) e.preventDefault(); // 추가된 줄
+  if(e.type.indexOf('touch') !== -1) e.preventDefault(); 
 });
 
 $('#main').on('touchmove mousemove', function(e){
   if( bDraw )
   {
-    var evt = (e.type.indexOf('touch') !== -1 ? e.touches[0] : e);
+    var evt = (e.type.indexOf('touch') !== -1 ? e.originalEvent.touches[0] : e);
     var iNewX = evt.clientX - bb.left;
     var iNewY = evt.clientY - bb.top;
 
@@ -71,12 +70,12 @@ $('#main').on('touchmove mousemove', function(e){
     iX = iNewX;
     iY = iNewY;
   }
-  if(e.type.indexOf('touch') !== -1) e.preventDefault(); // 추가된 줄
+  if(e.type.indexOf('touch') !== -1) e.preventDefault(); 
 });
 
 $('#main').on('touchend mouseup', function(e){
   bDraw = false;
-  if(e.type.indexOf('touch') !== -1) e.preventDefault(); // 추가된 줄
+  if(e.type.indexOf('touch') !== -1) e.preventDefault(); 
 });
 
  </script>
