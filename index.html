@@ -4,6 +4,12 @@
 <head lang="en">
  <meta charset="UTF-8">
 <style>
+  body, html, #main {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+  }
 	#scream {
 		display: none;
 	}
@@ -43,6 +49,15 @@ $(document).ready(function(){
 	$('#myColor').on('change', function(){
     		  ctx.strokeStyle = $(this).val(); // 색상지정
 	});
+
+  function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener('resize', resizeCanvas, false);
+    resizeCanvas();
+
 
 });
 
